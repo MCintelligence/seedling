@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 and older. Excludes the WebView cache (models are re-downloadable). -->
+<full-backup-content>
+    <exclude domain="root" path="cache/" />
+    <exclude domain="root" path="code_cache/" />
+</full-backup-content>

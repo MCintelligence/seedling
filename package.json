@@ -1,0 +1,29 @@
+{
+  "name": "seedling",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Seedling by SlopLVI: photo editor and sticker maker. Everything runs on your device.",
+  "author": "SlopLVI",
+  "license": "UNLICENSED",
+  "scripts": {
+    "sync": "cap sync",
+    "android": "cap sync android && cap open android",
+    "ios": "cap sync ios && cap open ios",
+    "assets": "capacitor-assets generate --android --ios --iconBackgroundColor '#E9EBE4' --iconBackgroundColorDark '#171B19' --splashBackgroundColor '#E9EBE4' --splashBackgroundColorDark '#171B19'"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/filesystem": "^8.1.5",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/ios": "^8.6.0",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^4.0.0",
+    "@capacitor/cli": "^8.6.0"
+  }
+}

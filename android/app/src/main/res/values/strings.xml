@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Seedling</string>
+    <string name="title_activity_main">Seedling</string>
+    <string name="package_name">com.sloplvi.seedling</string>
+    <string name="custom_url_scheme">com.sloplvi.seedling</string>
+</resources>

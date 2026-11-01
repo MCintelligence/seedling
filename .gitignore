@@ -1,0 +1,8 @@
+node_modules/
+android/app/src/main/assets/public/
+ios/App/App/public/
+*.keystore
+*.jks
+keystore.properties
+hosted-model/
+.DS_Store

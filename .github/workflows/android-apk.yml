@@ -1,0 +1,35 @@
+# Builds an installable Seedling APK for personal testing (debug-signed, not for the Play Store).
+# Runs on every push to main, or by hand from the Actions tab. The APK appears under the run's "Artifacts".
+name: Android APK
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - run: npm ci
+      - run: npx cap sync android
+      - name: Build debug APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+      - run: cp android/app/build/outputs/apk/debug/app-debug.apk seedling-1.0.0-personal.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seedling-apk
+          path: seedling-1.0.0-personal.apk
+          retention-days: 30
